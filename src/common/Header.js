@@ -7,7 +7,7 @@ class Header extends Component {
     this.state = {showMenu: false};
   }
 
-  onChange () {
+  handleClick () {
     this.setState({showMenu: !this.state.showMenu});
   }
 
@@ -23,7 +23,7 @@ class Header extends Component {
           aria-controls="navbarSupportedContent"
           aria-expanded="true"
           aria-label="Toggle navigation"
-          onClick={() => this.onChange()}
+          onClick={() => this.handleClick()}
         >
           <span className="navbar-toggler-icon" />
         </button>
@@ -60,7 +60,7 @@ class Header extends Component {
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
-                    href="#"
+                    href="/"
                     id="navbarDropdownMenuLink"
                     role="button"
                     data-toggle="dropdown"
@@ -113,7 +113,7 @@ class Header extends Component {
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
-                    href="#"
+                    href="/"
                     id="navbarDropdownMenuLink"
                     role="button"
                     data-toggle="dropdown"

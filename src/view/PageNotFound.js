@@ -6,6 +6,6 @@ export default props => (
         <h1>Página não encontrada</h1>
         <p>Este endereço não chega a lugar nenhum...</p>
         <p>...acho que devemos considerar isso um grande problema.</p>
-        <img src={Robot} />
+        <img src={Robot} alt=''/>
     </center>
 )
