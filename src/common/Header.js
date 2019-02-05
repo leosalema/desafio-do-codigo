@@ -92,7 +92,7 @@ class Header extends Component {
                   </a>
                 </li>
                 <li className="nav-item ">
-                  <a className="nav-link" href="/jornada/">
+                  <a className="nav-link" href="/jornadas/">
                     Jornadas
                   </a>
                 </li>
@@ -126,7 +126,7 @@ class Header extends Component {
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdownMenuLink"
                   >
-                    <a className="dropdown-item" href="/jornada/">Jornadas</a>
+                    <a className="dropdown-item" href="/jornadas/">Jornadas</a>
                     <a className="dropdown-item" href="/usuario/">Usuários</a>
                     <div className="dropdown-divider" />
                     <a className="dropdown-item" href="/sistema/">Sistema</a>

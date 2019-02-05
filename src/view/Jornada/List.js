@@ -5,29 +5,28 @@ import axios from 'axios'
 
 const URL = 'http://localhost:5000/api/admin/jornada/'
 
-class List extends Component {
+class JornadaForm extends Component {
     constructor(props) {
         super(props)
 
         this.state = { jornada: null }
     }
 
-    componentWillMount() {
-        axios.get(URL)
+    componentDidMount() {
+        axios.get(`${URL}`)
             .then(response => this.setState({ jornada: response.data}))
     }
 
-    handleTitle(jornada) {
-        this.props.history.push(`/jornadas/${jornada.id}/`)
+    handleTitle(id) {
+        this.props.history.push(`/jornada/${id}`)
     }
 
-    handleButton(jornada) {
-        this.props.history.push(`/${jornada.id}/jornada/`)
+    handleEdit(id) {
+        this.props.history.push(`/${id}/jornada/`)
     }
 
     render() {
-        console.log(this.state.jornada)
-        console.log(this.props)
+        console.log(this.state)
         return (
             <div>
                 <Header />
@@ -39,7 +38,7 @@ class List extends Component {
                                     (
                                         <Card 
                                             size='12'
-                                            title='Sem jorndas cadastradas' 
+                                            title='Sem Jornadas cadastradas' 
                                             text='Infelizmente não encontramos nenhuma jornada cadastrada. 
                                             Caso queira cadastrar alguma por favor clique no botão abaixo'
                                             buttonName='Criar'
@@ -55,8 +54,8 @@ class List extends Component {
                                                 title={jornada.titulo}
                                                 text={jornada.resumo}
                                                 buttonName='Editar'
-                                                handleTitle={() => this.handleTitle(jornada)}
-                                                handleButton={() => this.handleButton(jornada)}
+                                                handleTitle={() => this.handleTitle(jornada.id)}
+                                                handleButton={() => this.handleEdit(jornada.id) }
                                             />
                                         ))
                                     )
@@ -70,4 +69,4 @@ class List extends Component {
     }
 }
 
-export default List
+export default JornadaForm
